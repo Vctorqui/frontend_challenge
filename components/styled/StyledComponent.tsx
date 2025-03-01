@@ -24,6 +24,10 @@ export const Title = styled.h1`
 `
 
 export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
   background-color: ${(props) => props.theme.colors.primary};
   color: ${(props) => props.theme.colors.text};
   border: none;
@@ -46,6 +50,7 @@ export const ContainerList = styled.div`
 `
 
 export const CommentCard = styled.div`
+  border-radius: 0.25rem;
   background-color: transparent;
   padding: 1.5rem;
   border: 3px solid ${(props) => props.theme.colors.darkGrey};
@@ -75,4 +80,86 @@ export const CommentBody = styled.p`
   font-size: 1rem;
   color: ${(props) => props.theme.colors.text};
   line-height: 1.5;
+`
+
+export const FormContainer = styled.div`
+  border-radius: 0.25rem;
+  border: 3px solid ${(props) => props.theme.colors.darkGrey};
+  padding: 2rem;
+  margin-bottom: 2rem;
+`
+
+export const FormButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`
+
+export const FormGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+`
+
+export const Label = styled.label`
+  font-size: 1rem;
+  font-weight: bold;
+  color: ${(props) => props.theme.colors.secondary};
+`
+
+export const Input = styled.input`
+  padding: 0.75rem;
+  border: 1px solid ${(props) => props.theme.colors.border};
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+    border-color: ${(props) => props.theme.colors.primary};
+  }
+`
+
+export const Textarea = styled.textarea`
+  padding: 0.75rem;
+  border: 1px solid ${(props) => props.theme.colors.border};
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+  min-height: 120px;
+  resize: vertical;
+
+  &:focus {
+    outline: none;
+    border-color: ${(props) => props.theme.colors.primary};
+  }
+`
+
+export const ErrorMessage = styled.p`
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+`
+
+export const LoadingSpinner = styled.div`
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 0.5rem;
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 `
