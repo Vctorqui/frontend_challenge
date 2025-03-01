@@ -1,13 +1,27 @@
+'use client'
 import Image from 'next/image'
 import styles from './page.module.css'
-import { Container, Header, Title } from '@/components/styled/StyledComponent'
+import {
+  Button,
+  Container,
+  Header,
+  Title,
+} from '@/components/styled/StyledComponent'
+import { useState } from 'react'
+import CommentList from '@/components/CommentList'
 
 export default function Home() {
+  const [showForm, setShowForm] = useState(false)
+
   return (
     <Container>
       <Header>
         <Title>Comments List</Title>
+        <Button onClick={() => setShowForm(!showForm)}>
+          {showForm ? 'Hide form' : 'Add new comment'}
+        </Button>
       </Header>
+      <CommentList />
     </Container>
 
     // <div className={styles.page}>
