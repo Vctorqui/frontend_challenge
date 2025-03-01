@@ -142,7 +142,9 @@ export function ContextProviders({ children }: { children: React.ReactNode }) {
     </StyledComponentsRegistry>
   )
 }
-
-
 ```
+
+## Authors
+- **Víctor Quiñones**
+---
 
