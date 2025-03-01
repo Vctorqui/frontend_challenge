@@ -16,6 +16,7 @@ import {
 import { PlusIcon } from '@radix-ui/react-icons'
 import { useCommentStore } from '@/store/commentStore'
 import { NewComment } from '@/types/comment'
+import { enqueueSnackbar } from 'notistack'
 
 export default function CommentForm() {
   const { addNewComment, isLoading } = useCommentStore()
@@ -68,8 +69,10 @@ export default function CommentForm() {
         email: '',
         body: '',
       })
+      enqueueSnackbar('Comment added successfully', { variant: 'success' })
     } catch (error) {
       console.error('Failed to add comment', error)
+      enqueueSnackbar('Failed to add Comment', { variant: 'error' })
     }
   }
 
