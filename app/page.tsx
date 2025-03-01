@@ -9,6 +9,8 @@ import {
 } from '@/components/styled/StyledComponent'
 import { useState } from 'react'
 import CommentList from '@/components/CommentList'
+import CommentForm from '@/components/CommentForm'
+import { EyeClosedIcon, PlusIcon } from '@radix-ui/react-icons'
 
 export default function Home() {
   const [showForm, setShowForm] = useState(false)
@@ -18,9 +20,19 @@ export default function Home() {
       <Header>
         <Title>Comments List</Title>
         <Button onClick={() => setShowForm(!showForm)}>
-          {showForm ? 'Hide form' : 'Add new comment'}
+          {showForm ? (
+            <>
+              <EyeClosedIcon />
+              Hide Form
+            </>
+          ) : (
+            <>
+              <PlusIcon /> Add New Comment
+            </>
+          )}
         </Button>
       </Header>
+      {showForm && <CommentForm />}
       <CommentList />
     </Container>
 
