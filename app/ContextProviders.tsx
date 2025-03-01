@@ -12,6 +12,7 @@ const theme = {
     background: '#1D1616',
     text: '#EEEEEE',
     lightGrey: '#f5f5f5',
+    darkGrey: '#353434',
     border: '#D84040',
   },
   breakpoints: {
