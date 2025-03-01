@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import styles from './page.module.css'
-import { Container, Header, Title } from '@/components/styled/CommentStyles'
+import { Container, Header, Title } from '@/components/styled/StyledComponent'
 
 export default function Home() {
   return (
