@@ -3,7 +3,6 @@
 import { create } from 'zustand'
 import { Comment, NewComment } from '@/types/comment'
 import { addComment, getCommnets } from '@/services/api'
-import { error } from 'console'
 
 interface CommentState {
   comments: Comment[]
@@ -38,7 +37,7 @@ export const useCommentStore = create<CommentState>((set) => ({
         comments: [comment, ...state.comments],
         isLoading: false,
       }))
-    } catch {
+    } catch (error) {
       set({
         error: error instanceof Error ? error.message : 'Failed to add comment',
         isLoading: false,
