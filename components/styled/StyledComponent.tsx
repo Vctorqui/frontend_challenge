@@ -11,10 +11,14 @@ export const Container = styled.div`
 export const Header = styled.header`
   text-align: center;
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 `
 
 export const Title = styled.h1`
-  font-size: 2.5rem;
   font-weight: bold;
   color: ${(props) => props.theme.colors.primary};
 `
