@@ -1,5 +1,4 @@
 'use client'
-
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -42,6 +41,17 @@ export const Button = styled.button`
   }
 `
 
+export const IconButton = styled.button`
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+`
+
+// Card Component Syles
 export const ContainerList = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -82,6 +92,7 @@ export const CommentBody = styled.p`
   line-height: 1.5;
 `
 
+// Form Component Styles
 export const FormContainer = styled.div`
   border-radius: 0.25rem;
   border: 3px solid ${(props) => props.theme.colors.darkGrey};

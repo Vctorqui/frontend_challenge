@@ -156,7 +156,7 @@ const Pagination: React.FC<PaginationProps> = ({
   )
 }
 
-// Styled components
+// Pagination component styles
 const PaginationContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -221,6 +221,7 @@ const PaginationButton = styled.button<PaginationButtonProps>`
 `
 
 const PaginationInfo = styled.div`
+  font-weight: bold;
   display: flex;
   align-items: center;
   gap: 0.75rem;
