@@ -1,5 +1,6 @@
 'use client'
 
+import { useCommentStore } from '@/store/commentStore'
 import {
   CommentBody,
   CommentCard,
@@ -7,25 +8,32 @@ import {
   CommentName,
   ContainerList,
 } from './styled/StyledComponent'
+import { useEffect } from 'react'
 
 export default function CommentList() {
+  const { comments, fetchComments, isLoading, error } = useCommentStore()
+
+  useEffect(() => {
+    fetchComments()
+  }, [fetchComments])
+
+  if (isLoading && comments.length === 0) {
+    return <div>Wait, Loading comments...</div>
+  }
+
+  if (error && comments.length === 0) {
+    return <div>Error: {error}</div>
+  }
+
   return (
     <ContainerList>
-      <CommentCard>
-        <CommentName>Comment Name</CommentName>
-        <CommentEmail>Comment Email</CommentEmail>
-        <CommentBody>Comment body</CommentBody>
-      </CommentCard>
-      <CommentCard>
-        <CommentName>Comment Name</CommentName>
-        <CommentEmail>Comment Email</CommentEmail>
-        <CommentBody>Comment body</CommentBody>
-      </CommentCard>
-      <CommentCard>
-        <CommentName>Comment Name</CommentName>
-        <CommentEmail>Comment Email</CommentEmail>
-        <CommentBody>Comment body</CommentBody>
-      </CommentCard>
+      {comments.map((comment, index) => (
+        <CommentCard key={comment.id + index}>
+          <CommentName>{comment.name}</CommentName>
+          <CommentEmail>{comment.email}</CommentEmail>
+          <CommentBody>{comment.body}</CommentBody>
+        </CommentCard>
+      ))}
     </ContainerList>
   )
 }
